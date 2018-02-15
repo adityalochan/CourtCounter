@@ -10,28 +10,32 @@ public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 8;
     int scoreTeamB = 12;
     int scoreTeamC = 9;
+    TextView scoreView1, scoreView2,scoreView3;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scoreView1 = (TextView) findViewById(R.id.team_a_score);
+        scoreView2 = (TextView) findViewById(R.id.team_b_score);
+        scoreView3 = (TextView) findViewById(R.id.team_c_score);
+
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
         displayForTeamC(scoreTeamC);
+
     }
 
     public void displayForTeamA(int number){
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-        scoreView.setText(String.valueOf(number));
+        scoreView1.setText(String.valueOf(number));
     }
 
     public void displayForTeamB(int number){
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(number));
+        scoreView2.setText(String.valueOf(number));
     }
 
     public void displayForTeamC(int number){
-        TextView scoreView = (TextView) findViewById(R.id.team_c_score);
-        scoreView.setText(String.valueOf(number));
+        scoreView3.setText(String.valueOf(number));
     }
 
     public void ButtonA1(View view){
